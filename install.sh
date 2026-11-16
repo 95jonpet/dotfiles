@@ -21,10 +21,15 @@ TARGET="${SUDO_HOME:-"${HOME}"}"
 OWNER="${SUDO_USER:-"${USER}"}"
 cd -- "${SCRIPT_DIR}/src"
 
-if [[ ! -e "${TARGET}/.config" ]]; then
-  mkdir "${TARGET}/.config"
-  chown "${OWNER}:${OWNER}" "${TARGET}/.config"
-fi
+prepare_stow_dir() {
+  if [[ ! -e "$1" ]]; then
+    mkdir "$1"
+    chown "${OWNER}:${OWNER}" "$1"
+  fi
+}
+
+prepare_stow_dir "${TARGET}/.bashrc.d"
+prepare_stow_dir "${TARGET}/.config"
 
 stow --target "${TARGET}/.bashrc.d" --dotfiles bashrc.d
-stow -vvv --target "${TARGET}/.config" --dotfiles config
+stow --target "${TARGET}/.config" --dotfiles config
