@@ -8,6 +8,7 @@ RPM_DEPENDENCIES=(
   fzf
   neovim
   stow
+  zoxide
 )
 
 # Install RPM dependencies.
