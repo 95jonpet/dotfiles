@@ -7,6 +7,7 @@ RPM_DEPENDENCIES=(
   fd-find
   fzf
   neovim
+  ripgrep
   stow
   zoxide
 )
