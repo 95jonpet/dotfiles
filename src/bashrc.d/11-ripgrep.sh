@@ -5,4 +5,4 @@ if ! command -v rg &> /dev/null; then
   return 0
 fi
 
-. <(rg --generate complete-bash)
+source <(rg --generate complete-bash)
