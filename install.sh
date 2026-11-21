@@ -8,6 +8,7 @@ RPM_DEPENDENCIES=(
   fzf
   neovim
   ripgrep
+  starship
   stow
   zoxide
 )
