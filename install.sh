@@ -34,6 +34,11 @@ prepare_stow_dir() {
 
 prepare_stow_dir "${TARGET}/.bashrc.d"
 prepare_stow_dir "${TARGET}/.config"
+prepare_stow_dir "${TARGET}/.local"
 
 stow --target "${TARGET}/.bashrc.d" --dotfiles bashrc.d
 stow --target "${TARGET}/.config" --dotfiles config
+stow --target "${TARGET}/.local" --dotfiles local
+
+# Ensure that the font cache is updated.
+fc-cache
