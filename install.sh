@@ -4,6 +4,7 @@ set -euo pipefail
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
 RPM_DEPENDENCIES=(
   bat
+  eza
   fd-find
   fzf
   neovim
